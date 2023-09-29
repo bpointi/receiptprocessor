@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Boot Endpoint Tester</title>
+</head>
+<body>
+
+<h1>Spring Boot Endpoint Tester</h1>
+
+<h2>GET Request</h2>
+<form action="http://localhost:8080/receipts/{id}/points" method="get" target="_blank">
+    <label for="getId">ID:</label>
+    <input type="text" id="getId" name="id" required>
+    <button type="submit">Send GET Request</button>
+</form>
+
+<h2>POST Request</h2>
+<form action="http://localhost:8080/receipts/process" method="post" target="_blank">
+    <!-- Include other fields as needed -->
+    <button type="submit">Send POST Request</button>
+</form>
+
+</body>
+</html>
