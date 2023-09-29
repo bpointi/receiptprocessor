@@ -14,7 +14,6 @@ public class ReceiptService {
     public Long processReceipt(Receipt receipt) {
         this.calculatePoints(receipt);
         this.receiptRepository.save(receipt);
-        receiptRepository.save(receipt);
         return receipt.getId();
     }
 
