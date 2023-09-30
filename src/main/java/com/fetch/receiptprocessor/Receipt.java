@@ -21,11 +21,6 @@ public class Receipt {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
-//    @Column(name = "receiptitem_id", columnDefinition = "BINARY(16)")
-//    UUID id = UUID.randomUUID();
-//    @GeneratedValue(strategy = GenerationType.UUID)
-//    @Column(columnDefinition="UUID")
-//    private UUID id;
 
     private String retailer;
 
