@@ -89,10 +89,10 @@ Date: Sat, 30 Sep 2023 01:11:52 GMT
 ```
 ### GET
 ```agsl
-docker exec -it receiptprocessor/src sh -c 'curl -i http://localhost:8080/receipts/1/points'
+docker exec -it <container_id> sh -c 'curl -i http://localhost:8080/receipts/1/points'
 ```
 ```agsl
-docker exec -it receiptprocessor/src sh -c 'curl -i http://localhost:8080/receipts/2/points'
+docker exec -it <container_id> sh -c 'curl -i http://localhost:8080/receipts/2/points'
 ```
 Sample Output
 ```
