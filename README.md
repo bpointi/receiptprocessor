@@ -15,6 +15,7 @@ docker build -t receiptprocessor/src .
 docker run -p 8080:8080 receiptprocessor/src
 ```
 From your current terminal window, you may view the logging results outputted from Spring Logger. 
+
 4. Open a new terminal window and obtain the identifier of the container with:
 ```agsl
 docker container ls
