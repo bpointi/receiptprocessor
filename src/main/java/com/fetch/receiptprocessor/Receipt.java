@@ -35,22 +35,9 @@ public class Receipt {
 
     private double total;
 
-//    @ElementCollection
-//    private List<HashMap<String, String>> items;
-//    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-//    @JoinColumn(name = "item_id")
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "receipt_id")
     List<ReceiptItem> items;
 
     private int points = 0;
-
-// ------
-//    @Column
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    private Long id;
-//
-//    @Column
-//    private int points;
 }

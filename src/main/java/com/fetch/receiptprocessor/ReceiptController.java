@@ -35,11 +35,9 @@ public class ReceiptController {
     public ResponseEntity getPointsFromReceipt(@PathVariable Long id) {
         Optional<Receipt> receipt = this.receiptService.findReceiptById(id);
         if (receipt.isPresent()) {
-//            this.receiptService.calculatePoints(id);
             logger.info("Successfully retrieved points");
             Map<String, Integer> resp = new HashMap<>();
             resp.put("points",receipt.get().getPoints());
-//            return new ResponseEntity<>(receipt.get().getPoints(), HttpStatus.OK);
             return new ResponseEntity<>(resp, HttpStatus.OK);
         } else {
             logger.info("Could not find receipt in database");
