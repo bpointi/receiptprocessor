@@ -3,7 +3,6 @@
 This is a Spring Boot application that calculates 
 the points for a given receipt. It is dockerized and its API endpoints may be demonstrated 
 by running its Docker container and sending cURL requests.
----
 ## How to Run Project
 
 1. Download the project and start your Docker daemon. You can do this by opening the Docker Desktop application on your system
