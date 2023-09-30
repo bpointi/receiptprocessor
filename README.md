@@ -26,6 +26,7 @@ CONTAINER ID   IMAGE                  COMMAND                  CREATED          
 1d184f14e096   receiptprocessor/src   "java -jar /receiptp…"   36 seconds ago   Up 35 seconds   0.0.0.0:8080->8080/tcp   nervous_lehmann
 ```
 Keep track of the Container ID that is outputted in your terminal. You will need this to send requests from the terminal.
+
 5. You may now send cURL requests to the API from within the container. Here are some POST and GET requests that can be made:
 ### POST 
 ```agsl
