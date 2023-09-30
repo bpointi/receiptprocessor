@@ -121,8 +121,6 @@ Takes in a JSON receipt (see example in the example directory) and returns a JSO
 The ID returned is the ID that should be passed into `/receipts/{id}/points` to get the number of points the receipt
 was awarded.
 
-How many points should be earned are defined by the rules below.
-
 Example Response:
 ```json
 { "id": 1 }
