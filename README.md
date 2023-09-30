@@ -78,12 +78,30 @@ docker exec -it <container_id>  sh -c 'curl -i -X POST -H "Content-Type: applica
 }'\'' http://localhost:8080/receipts/process'
 
 ```
+Sample Output
+```
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sat, 30 Sep 2023 01:11:52 GMT
+
+{"id":1}%              
+```
 ### GET
 ```agsl
 docker exec -it receiptprocessor/src sh -c 'curl -i http://localhost:8080/receipts/1/points'
 ```
 ```agsl
 docker exec -it receiptprocessor/src sh -c 'curl -i http://localhost:8080/receipts/2/points'
+```
+Sample Output
+```
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sat, 30 Sep 2023 01:22:35 GMT
+
+{"points":109}%                                       
 ```
 ---
 ## Summary of API Specification
