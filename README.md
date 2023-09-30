@@ -3,7 +3,6 @@
 This is a Spring Boot application that calculates 
 the points for a given receipt. It is dockerized and its API endpoints may be demonstrated 
 by running its Docker container and sending cURL requests.
----
 ## How to Run Project
 
 1. Download the project and start your Docker daemon. You can do this by opening the Docker Desktop application on your system
@@ -16,6 +15,7 @@ docker build -t receiptprocessor/src .
 docker run -p 8080:8080 receiptprocessor/src
 ```
 From your current terminal window, you may view the logging results outputted from Spring Logger. 
+
 4. Open a new terminal window and obtain the identifier of the container with:
 ```agsl
 docker container ls
@@ -26,6 +26,7 @@ CONTAINER ID   IMAGE                  COMMAND                  CREATED          
 1d184f14e096   receiptprocessor/src   "java -jar /receiptp…"   36 seconds ago   Up 35 seconds   0.0.0.0:8080->8080/tcp   nervous_lehmann
 ```
 Keep track of the Container ID that is outputted in your terminal. You will need this to send requests from the terminal.
+
 5. You may now send cURL requests to the API from within the container. Here are some POST and GET requests that can be made:
 ### POST 
 ```agsl
@@ -78,12 +79,30 @@ docker exec -it <container_id>  sh -c 'curl -i -X POST -H "Content-Type: applica
 }'\'' http://localhost:8080/receipts/process'
 
 ```
+Sample Output
+```
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sat, 30 Sep 2023 01:11:52 GMT
+
+{"id":1}%              
+```
 ### GET
 ```agsl
-docker exec -it receiptprocessor/src sh -c 'curl -i http://localhost:8080/receipts/1/points'
+docker exec -it <container_id> sh -c 'curl -i http://localhost:8080/receipts/1/points'
 ```
 ```agsl
-docker exec -it receiptprocessor/src sh -c 'curl -i http://localhost:8080/receipts/2/points'
+docker exec -it <container_id> sh -c 'curl -i http://localhost:8080/receipts/2/points'
+```
+Sample Output
+```
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sat, 30 Sep 2023 01:22:35 GMT
+
+{"points":109}%                                       
 ```
 ---
 ## Summary of API Specification
@@ -101,8 +120,6 @@ Takes in a JSON receipt (see example in the example directory) and returns a JSO
 
 The ID returned is the ID that should be passed into `/receipts/{id}/points` to get the number of points the receipt
 was awarded.
-
-How many points should be earned are defined by the rules below.
 
 Example Response:
 ```json
